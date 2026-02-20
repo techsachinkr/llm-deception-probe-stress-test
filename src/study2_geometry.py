@@ -1,5 +1,5 @@
 """
-Study 2: Geometric Complexity — Subspace or Cone? (§6).
+Study 2: Geometric Complexity — Subspace or Cone? (§5.2).
 Tests H-LIN, H-SUB, H-CONE via cross-domain transfer,
 multi-dim probes, PCA with permutation null, NMF, and Rayleigh test.
 """

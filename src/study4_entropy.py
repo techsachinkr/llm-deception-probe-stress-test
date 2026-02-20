@@ -1,5 +1,5 @@
 """
-Study 4: The Entropy-Proxy Hypothesis (§8).
+Study 4: The Entropy-Proxy Hypothesis (§5.4).
 Implements entropy computation (Logit Lens + Tuned Lens),
 probe-entropy correlation (P4a), entropy residualization (P4b/P4c),
 and post-RL entropy dynamics.

@@ -1,5 +1,5 @@
 """
-Probe training: linear, multi-dimensional, and MLP probes (§4.5).
+Probe training: linear, multi-dimensional, and MLP probes (§4.4).
 """
 import logging
 from typing import Dict, List, Optional, Tuple

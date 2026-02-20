@@ -1,7 +1,7 @@
 """
-Study 3: Adversarial Robustness and the Five-Probe Battery (§7).
-Implements RL-Obfuscation (§4.6.1), the five-probe control battery (§4.6.2),
-and systematic distractor evaluation (§4.6.3).
+Study 3: Adversarial Robustness and the Five-Probe Battery (§5.3).
+Implements RL-Obfuscation , the five-probe control battery ,
+and systematic distractor evaluation (§4.5).
 """
 import logging
 import copy

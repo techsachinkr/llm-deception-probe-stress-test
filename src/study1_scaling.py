@@ -1,5 +1,5 @@
 """
-Study 1: The Scaling Laws of Deception Representations (§5).
+Study 1: The Scaling Laws of Deception Representations (§5.1).
 Tests emergence of linear separability, peak layer analysis,
 and SAE feature decomposition across Gemma 3 scales.
 """

@@ -1,5 +1,5 @@
 """
-Activation collection from Gemma 3 residual streams (§4.4).
+Activation collection from Gemma 3 residual streams (§4.3).
 Collects activations at every layer for every example,
 at the last token of the generated response.
 """

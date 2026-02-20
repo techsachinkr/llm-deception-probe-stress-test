@@ -1,5 +1,5 @@
 """
-Dataset construction for all four primary datasets + adversarial (§4.3).
+Dataset construction for all four primary datasets + adversarial (§4.2).
 D-RepE:  Simple contrastive (instructional lying)
 D-Role:  Roleplay deception
 D-Sand:  Sandbagging (capability withholding)

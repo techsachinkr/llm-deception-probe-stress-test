@@ -3,7 +3,7 @@ OPTIMIZED dataset generation with batched inference.
 Replaces the sequential generate_response() loop with batch generation,
 typically 10-20x faster depending on GPU memory.
 
-Drop-in replacement for src/data_generation.py
+Faster vesion of src/data_generation.py
 """
 import json
 import random

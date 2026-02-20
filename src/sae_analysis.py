@@ -1,5 +1,5 @@
 """
-SAE Feature Analysis and Causal Validation (§4.2, §4.7, §5.4).
+SAE Feature Analysis and Causal Validation.
 Uses Gemma Scope 2 SAEs to decompose probe directions
 and validate features via correlation, causal ablation, and specificity.
 """

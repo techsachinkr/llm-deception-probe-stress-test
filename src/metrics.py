@@ -1,6 +1,6 @@
 """
 Statistical metrics: AUROC, bootstrap CIs, DeLong test, effect sizes.
-Implements all metrics from §4.5.4.
+Implements all metrics from §4.4.
 """
 import logging
 from typing import Dict, List, Optional, Tuple

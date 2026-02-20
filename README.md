@@ -9,10 +9,10 @@ This codebase implements four studies testing competing hypotheses about how dec
 
 | Study | Section | What it tests |
 |-------|---------|---------------|
-| **Study 1** | §5 | Scaling laws: emergence of linear separability across 1B→27B |
-| **Study 2** | §6 | Geometry: is deception a direction, subspace, or cone? |
-| **Study 3** | §7 | Adversarial robustness: five-probe battery against RL-obfuscation |
-| **Study 4** | §8 | Entropy proxy: are probes detecting cognitive load? |
+| **Study 1** | §5.1 | Scaling laws: emergence of linear separability across 1B→27B |
+| **Study 2** | §5.2 | Geometry: is deception a direction, subspace, or cone? |
+| **Study 3** | §5.3 | Adversarial robustness: five-probe battery against RL-obfuscation |
+| **Study 4** | §5.4 | Entropy proxy: are probes detecting cognitive load? |
 
 
 ## Quick Start
