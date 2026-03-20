@@ -1,0 +1,381 @@
+{
+  "model": "google/gemma-3-12b-it",
+  "model_size": "12B",
+  "n_layers": 48,
+  "best_layers": {
+    "repe": 23,
+    "role": 21,
+    "mask": 14
+  },
+  "transfer_matrices": {
+    "source_layer": {
+      "repe_to_repe": {
+        "auroc": 0.9987750000000001,
+        "auroc_ci": [
+          0.9970762852228048,
+          0.9998249606161386
+        ],
+        "probe_trained_at_layer": 23,
+        "evaluated_at_layer": 23
+      },
+      "repe_to_role": {
+        "auroc": 0.49655000000000005,
+        "auroc_ci": [
+          0.44022930933431,
+          0.5527477583596629
+        ],
+        "probe_trained_at_layer": 23,
+        "evaluated_at_layer": 23
+      },
+      "repe_to_mask": {
+        "auroc": 0.85205,
+        "auroc_ci": [
+          0.8129310377113708,
+          0.8898002204384486
+        ],
+        "probe_trained_at_layer": 23,
+        "evaluated_at_layer": 23
+      },
+      "role_to_repe": {
+        "auroc": 0.8545499999999999,
+        "auroc_ci": [
+          0.816826547967358,
+          0.8894562020099368
+        ],
+        "probe_trained_at_layer": 21,
+        "evaluated_at_layer": 21
+      },
+      "role_to_role": {
+        "auroc": 0.987825,
+        "auroc_ci": [
+          0.9799102187877383,
+          0.9940154246794871
+        ],
+        "probe_trained_at_layer": 21,
+        "evaluated_at_layer": 21
+      },
+      "role_to_mask": {
+        "auroc": 0.9203250000000001,
+        "auroc_ci": [
+          0.8907937055873121,
+          0.9467173233270795
+        ],
+        "probe_trained_at_layer": 21,
+        "evaluated_at_layer": 21
+      },
+      "mask_to_repe": {
+        "auroc": 0.616475,
+        "auroc_ci": [
+          0.5574172614507283,
+          0.6732933240906228
+        ],
+        "probe_trained_at_layer": 14,
+        "evaluated_at_layer": 14
+      },
+      "mask_to_role": {
+        "auroc": 0.526425,
+        "auroc_ci": [
+          0.47013835865956755,
+          0.5835569253081943
+        ],
+        "probe_trained_at_layer": 14,
+        "evaluated_at_layer": 14
+      },
+      "mask_to_mask": {
+        "auroc": 0.9994999999999999,
+        "auroc_ci": [
+          0.998191136569189,
+          1.0
+        ],
+        "probe_trained_at_layer": 14,
+        "evaluated_at_layer": 14
+      }
+    },
+    "target_layer": {
+      "repe_to_repe": {
+        "auroc": 0.9987750000000001,
+        "auroc_ci": [
+          0.9970762852228048,
+          0.9998249606161386
+        ],
+        "probe_trained_at_layer": 23,
+        "evaluated_at_layer": 23
+      },
+      "repe_to_role": {
+        "auroc": 0.5173749999999999,
+        "auroc_ci": [
+          0.4617562523168267,
+          0.574309805370781
+        ],
+        "probe_trained_at_layer": 23,
+        "evaluated_at_layer": 21
+      },
+      "repe_to_mask": {
+        "auroc": 0.38492499999999996,
+        "auroc_ci": [
+          0.3290863507702896,
+          0.44168739143611513
+        ],
+        "probe_trained_at_layer": 23,
+        "evaluated_at_layer": 14
+      },
+      "role_to_repe": {
+        "auroc": 0.871225,
+        "auroc_ci": [
+          0.8353326553121247,
+          0.9038635180229158
+        ],
+        "probe_trained_at_layer": 21,
+        "evaluated_at_layer": 23
+      },
+      "role_to_role": {
+        "auroc": 0.987825,
+        "auroc_ci": [
+          0.9799102187877383,
+          0.9940154246794871
+        ],
+        "probe_trained_at_layer": 21,
+        "evaluated_at_layer": 21
+      },
+      "role_to_mask": {
+        "auroc": 0.6733499999999999,
+        "auroc_ci": [
+          0.6193541922392847,
+          0.725618478896919
+        ],
+        "probe_trained_at_layer": 21,
+        "evaluated_at_layer": 14
+      },
+      "mask_to_repe": {
+        "auroc": 0.6920375,
+        "auroc_ci": [
+          0.6376115028640337,
+          0.7439102637694002
+        ],
+        "probe_trained_at_layer": 14,
+        "evaluated_at_layer": 23
+      },
+      "mask_to_role": {
+        "auroc": 0.5943125,
+        "auroc_ci": [
+          0.5386864113676013,
+          0.6500889179347222
+        ],
+        "probe_trained_at_layer": 14,
+        "evaluated_at_layer": 21
+      },
+      "mask_to_mask": {
+        "auroc": 0.9994999999999999,
+        "auroc_ci": [
+          0.998191136569189,
+          1.0
+        ],
+        "probe_trained_at_layer": 14,
+        "evaluated_at_layer": 14
+      }
+    },
+    "retrained_target": {
+      "repe_to_repe": {
+        "auroc": 0.9987750000000001,
+        "auroc_ci": [
+          0.9970762852228048,
+          0.9998249606161386
+        ],
+        "probe_trained_at_layer": 23,
+        "evaluated_at_layer": 23
+      },
+      "repe_to_role": {
+        "auroc": 0.479025,
+        "auroc_ci": [
+          0.42276574429969865,
+          0.5362688632540039
+        ],
+        "probe_trained_at_layer": 21,
+        "evaluated_at_layer": 21
+      },
+      "repe_to_mask": {
+        "auroc": 0.6349,
+        "auroc_ci": [
+          0.5786571639564961,
+          0.6891930663175042
+        ],
+        "probe_trained_at_layer": 14,
+        "evaluated_at_layer": 14
+      },
+      "role_to_repe": {
+        "auroc": 0.858625,
+        "auroc_ci": [
+          0.8213280629948462,
+          0.8926212577326408
+        ],
+        "probe_trained_at_layer": 23,
+        "evaluated_at_layer": 23
+      },
+      "role_to_role": {
+        "auroc": 0.987825,
+        "auroc_ci": [
+          0.9799102187877383,
+          0.9940154246794871
+        ],
+        "probe_trained_at_layer": 21,
+        "evaluated_at_layer": 21
+      },
+      "role_to_mask": {
+        "auroc": 0.779925,
+        "auroc_ci": [
+          0.732416637559102,
+          0.8260729868640926
+        ],
+        "probe_trained_at_layer": 14,
+        "evaluated_at_layer": 14
+      },
+      "mask_to_repe": {
+        "auroc": 0.629475,
+        "auroc_ci": [
+          0.5714629118594059,
+          0.6856644313909774
+        ],
+        "probe_trained_at_layer": 23,
+        "evaluated_at_layer": 23
+      },
+      "mask_to_role": {
+        "auroc": 0.5959249999999999,
+        "auroc_ci": [
+          0.5403497022724972,
+          0.6521311516538008
+        ],
+        "probe_trained_at_layer": 21,
+        "evaluated_at_layer": 21
+      },
+      "mask_to_mask": {
+        "auroc": 0.9994999999999999,
+        "auroc_ci": [
+          0.998191136569189,
+          1.0
+        ],
+        "probe_trained_at_layer": 14,
+        "evaluated_at_layer": 14
+      }
+    }
+  },
+  "decomposition": {
+    "repe_to_repe": {
+      "source_layer_auroc": 0.9987750000000001,
+      "target_layer_same_probe_auroc": 0.9987750000000001,
+      "retrained_target_layer_auroc": 0.9987750000000001,
+      "layer_mismatch_effect": 0.0,
+      "feature_relearning_effect": 0.0,
+      "total_improvement": 0.0,
+      "remaining_gap_to_in_domain": 0.0002997918281612,
+      "is_diagonal": true,
+      "source_layer": 23,
+      "target_layer": 23
+    },
+    "repe_to_role": {
+      "source_layer_auroc": 0.49655000000000005,
+      "target_layer_same_probe_auroc": 0.5173749999999999,
+      "retrained_target_layer_auroc": 0.479025,
+      "layer_mismatch_effect": 0.02082499999999987,
+      "feature_relearning_effect": -0.03834999999999994,
+      "total_improvement": -0.01752500000000007,
+      "remaining_gap_to_in_domain": 0.5191996005351205,
+      "is_diagonal": false,
+      "source_layer": 23,
+      "target_layer": 21
+    },
+    "repe_to_mask": {
+      "source_layer_auroc": 0.85205,
+      "target_layer_same_probe_auroc": 0.38492499999999996,
+      "retrained_target_layer_auroc": 0.6349,
+      "layer_mismatch_effect": -0.467125,
+      "feature_relearning_effect": 0.24997500000000006,
+      "total_improvement": -0.21714999999999995,
+      "remaining_gap_to_in_domain": 0.36507499437373403,
+      "is_diagonal": false,
+      "source_layer": 23,
+      "target_layer": 14
+    },
+    "role_to_repe": {
+      "source_layer_auroc": 0.8545499999999999,
+      "target_layer_same_probe_auroc": 0.871225,
+      "retrained_target_layer_auroc": 0.858625,
+      "layer_mismatch_effect": 0.016675000000000106,
+      "feature_relearning_effect": -0.012600000000000056,
+      "total_improvement": 0.004075000000000051,
+      "remaining_gap_to_in_domain": 0.1404497918281613,
+      "is_diagonal": false,
+      "source_layer": 21,
+      "target_layer": 23
+    },
+    "role_to_role": {
+      "source_layer_auroc": 0.987825,
+      "target_layer_same_probe_auroc": 0.987825,
+      "retrained_target_layer_auroc": 0.987825,
+      "layer_mismatch_effect": 0.0,
+      "feature_relearning_effect": 0.0,
+      "total_improvement": 0.0,
+      "remaining_gap_to_in_domain": 0.010399600535120457,
+      "is_diagonal": true,
+      "source_layer": 21,
+      "target_layer": 21
+    },
+    "role_to_mask": {
+      "source_layer_auroc": 0.9203250000000001,
+      "target_layer_same_probe_auroc": 0.6733499999999999,
+      "retrained_target_layer_auroc": 0.779925,
+      "layer_mismatch_effect": -0.24697500000000017,
+      "feature_relearning_effect": 0.10657500000000009,
+      "total_improvement": -0.14040000000000008,
+      "remaining_gap_to_in_domain": 0.22004999437373407,
+      "is_diagonal": false,
+      "source_layer": 21,
+      "target_layer": 14
+    },
+    "mask_to_repe": {
+      "source_layer_auroc": 0.616475,
+      "target_layer_same_probe_auroc": 0.6920375,
+      "retrained_target_layer_auroc": 0.629475,
+      "layer_mismatch_effect": 0.07556249999999998,
+      "feature_relearning_effect": -0.06256249999999997,
+      "total_improvement": 0.013000000000000012,
+      "remaining_gap_to_in_domain": 0.3695997918281613,
+      "is_diagonal": false,
+      "source_layer": 14,
+      "target_layer": 23
+    },
+    "mask_to_role": {
+      "source_layer_auroc": 0.526425,
+      "target_layer_same_probe_auroc": 0.5943125,
+      "retrained_target_layer_auroc": 0.5959249999999999,
+      "layer_mismatch_effect": 0.06788749999999999,
+      "feature_relearning_effect": 0.0016124999999999057,
+      "total_improvement": 0.0694999999999999,
+      "remaining_gap_to_in_domain": 0.4022996005351205,
+      "is_diagonal": false,
+      "source_layer": 14,
+      "target_layer": 21
+    },
+    "mask_to_mask": {
+      "source_layer_auroc": 0.9994999999999999,
+      "target_layer_same_probe_auroc": 0.9994999999999999,
+      "retrained_target_layer_auroc": 0.9994999999999999,
+      "layer_mismatch_effect": 0.0,
+      "feature_relearning_effect": 0.0,
+      "total_improvement": 0.0,
+      "remaining_gap_to_in_domain": 0.0004749943737341056,
+      "is_diagonal": true,
+      "source_layer": 14,
+      "target_layer": 14
+    }
+  },
+  "summary": {
+    "n_off_diagonal_pairs": 6,
+    "mean_off_diagonal_source_layer": 0.7110625,
+    "mean_off_diagonal_retrained_target": 0.6629791666666666,
+    "mean_total_improvement": -0.04808333333333336,
+    "mean_layer_mismatch_effect": -0.08885833333333337,
+    "mean_feature_relearning_effect": 0.04077500000000001,
+    "mean_remaining_gap": 0.33611229557900524,
+    "interpretation": "Minimal improvement from target-layer evaluation (mean delta=-0.048). Layer mismatch is NOT the primary cause of transfer failure. H-LIN rejection is rock-solid: deception types are genuinely geometrically disjoint."
+  }
+}
