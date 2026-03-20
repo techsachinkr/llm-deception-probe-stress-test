@@ -1,6 +1,6 @@
 # llm-deception-probe-stress-test
 
-Full implementation of the experimental pipeline for  paper submission titled ""Pressure-Testing Deception Probes in LLMs: Scaling, Robustness, and the Geometry of Deceptive Representations"*" into Generation, Evaluation, and Metrics 
+Full implementation of the experimental pipeline for  paper submission titled "Pressure-Testing Deception Probes in LLMs: Scaling, Robustness, and the Geometry of Deceptive Representations" into Generation, Evaluation, and Metrics 
 (GEM) Workshop at ACL 2026.
 
 ## Overview
