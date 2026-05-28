@@ -94,6 +94,44 @@ python additional_experiments/experiment_1b_perdomain_pca.py \
 
 
 
+#### Verified vs Unverified Stratified Analysis (Study 1)
+
+**Question:** Are near-perfect AUROC scores on D-RepE driven by genuine deception detection, or does the probe merely separate examples where the model followed the lie instruction from examples where it ignored it?
+
+**Design:**
+- Each D-RepE example carries a `verified` flag: `True` when the deceptive response was confirmed to omit the ground-truth answer (the model actually lied), `False` when it may have leaked the correct answer despite the lie instruction.
+- The best-layer linear probe is evaluated separately on the verified-only and unverified-only test subsets.
+- If AUROC remains high on the verified stratum, the probe detects genuine deception in the activations rather than surface instruction-following differences.
+
+**How to run:**
+
+The stratified analysis runs automatically as part of Study 1 — no separate script needed:
+
+```bash
+# Re-run Study 1 using cached activations and datasets
+python scripts/run_all.py \
+    --models 4B 27B \
+    --studies 1 \
+    --skip-datagen \
+    --skip-activation
+    --output_dir verified_vs_unverified_stratified
+```
+
+Results are saved to `outputs/results/study1/study1_results.json` under `scaling.<model_size>.stratified_auroc` and printed by `generate_tables.py`:
+
+```bash
+python scripts/generate_tables.py --results-dir ./outputs/results
+```
+
+Look for the **"Verified vs Unverified Stratified AUROC"** table in the output, which reports AUROC with 95% bootstrap CIs for both strata at each model size.
+
+**Note on alignment:** The verified flags are read from the dataset JSON files and aligned with the cached activation arrays by replaying the same `RandomState(42)` permutation used during activation splitting — re-collecting activations is not required.
+
+**Note on GPU:** On an A100 80 GB, run without quantization. If PyTorch reports `cuda.is_available() = False` despite a healthy `nvidia-smi`, the installed PyTorch was likely compiled against a newer CUDA than your driver supports. Fix with:
+```bash
+pip install torch torchvision --index-url https://download.pytorch.org/whl/cu124 --force-reinstall
+```
+
 #### 1C: Cross-Domain Transfer at Target-Best Layers
 
 **Question:** How much of off-diagonal failure is layer mismatch vs geometric disjointness?
@@ -129,3 +167,20 @@ python additional_experiments/experiment_1c_target_layer_transfer.py \
 ```
 
 
+## Citation
+
+If you use this code, please cite:
+
+```bibtex
+@misc{kumar2026pressuretestingdeceptionprobesllms,
+      title={Pressure-Testing Deception Probes in LLMs: Scaling, Robustness, and the Geometry of Deceptive Representations}, 
+      author={Sachin Kumar},
+      year={2026},
+      eprint={2605.27958},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2605.27958}, 
+}
+```
+
+Preprint: https://arxiv.org/abs/2605.27958

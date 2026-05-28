@@ -11,7 +11,7 @@ import numpy as np
 
 from src.probes import train_probes_all_layers, TextBaseline
 from src.metrics import (
-    compute_all_metrics, bootstrap_peak_layer, auroc
+    compute_all_metrics, bootstrap_peak_layer, auroc, bootstrap_ci
 )
 from src.utils import save_json
 
@@ -105,7 +105,82 @@ def run_study1(
             },
             "mlp_auroc": probe_results.get("mlp", {}).get("auroc", None),
         }
-        
+
+        # ── Stratified analysis: verified vs unverified (D-RepE only) ──
+        # "Verified" means the deceptive response was confirmed to omit the ground
+        # truth, i.e. the model actually lied.  High AUROC on the verified-only
+        # stratum shows the probe detects genuine deception rather than merely
+        # distinguishing instruction-following from instruction-ignoring examples.
+        if ds_name == "repe" and ds_name in all_datasets:
+            all_examples = all_datasets[ds_name].all_examples
+            n_train_size = len(train_acts)
+            n_val_size   = len(val_acts)
+            n_test_size  = len(test_acts)
+            n_total = n_train_size + n_val_size + n_test_size
+
+            verified_all = np.array([e.verified for e in all_examples], dtype=bool)
+            # collect_dataset_activations interleaves honest/deceptive:
+            #   acts[2*i] = honest (label 0), acts[2*i+1] = deceptive (label 1)
+            if len(all_examples) * 2 == n_total:
+                verified_acts = np.repeat(verified_all, 2)
+            elif len(all_examples) == n_total:
+                verified_acts = verified_all
+            else:
+                verified_acts = None
+
+            if verified_acts is not None:
+                # Replay the identical permutation used in prepare_activation_splits
+                perm = np.random.RandomState(42).permutation(n_total)
+                test_orig_idx = perm[n_train_size + n_val_size:]
+                test_verified = verified_acts[test_orig_idx]
+
+                n_ver   = int(np.sum(test_verified))
+                n_unver = int(np.sum(~test_verified))
+                logger.info(f"  D-RepE test split: {n_ver} verified, {n_unver} unverified")
+
+                strat = {"n_verified": n_ver, "n_unverified": n_unver}
+
+                if n_ver >= 10:
+                    v_auc, v_lo, v_hi = bootstrap_ci(
+                        test_labels[test_verified],
+                        test_scores[test_verified],
+                        auroc,
+                        n_bootstrap=config.probe.n_bootstrap,
+                    )
+                    strat["verified"] = {
+                        "auroc": float(v_auc),
+                        "ci_lower": float(v_lo),
+                        "ci_upper": float(v_hi),
+                    }
+                    logger.info(
+                        f"  Verified-only AUROC:   {v_auc:.4f} "
+                        f"[{v_lo:.4f}, {v_hi:.4f}]"
+                    )
+
+                if n_unver >= 10:
+                    u_auc, u_lo, u_hi = bootstrap_ci(
+                        test_labels[~test_verified],
+                        test_scores[~test_verified],
+                        auroc,
+                        n_bootstrap=config.probe.n_bootstrap,
+                    )
+                    strat["unverified"] = {
+                        "auroc": float(u_auc),
+                        "ci_lower": float(u_lo),
+                        "ci_upper": float(u_hi),
+                    }
+                    logger.info(
+                        f"  Unverified-only AUROC: {u_auc:.4f} "
+                        f"[{u_lo:.4f}, {u_hi:.4f}]"
+                    )
+
+                results["scaling"][model_size]["stratified_auroc"] = strat
+            else:
+                logger.warning(
+                    f"  Verified stratification skipped: dataset length "
+                    f"({len(all_examples)}) does not map to activation length ({n_total})"
+                )
+
         # ── 5.2: Peak layer with bootstrap uncertainty ──
         layer_scores_dict = {}
         layer_aurocs_test = np.zeros(n_layers)

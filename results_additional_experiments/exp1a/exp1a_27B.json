@@ -1,0 +1,207 @@
+{
+  "model": "google/gemma-3-27b-it",
+  "model_size": "27B",
+  "best_layer": 34,
+  "n_layers": 62,
+  "train_styles": [
+    "pirate",
+    "formal_academic",
+    "robotic",
+    "poetic"
+  ],
+  "test_styles": [
+    "shakespearean",
+    "childlike",
+    "slang_casual",
+    "sarcastic"
+  ],
+  "evaluations": {
+    "clean": {
+      "clean_probe": {
+        "auroc": 0.99985,
+        "auroc_ci": [
+          0.9994491185897436,
+          1.0
+        ],
+        "n": 400
+      },
+      "style_augmented_probe": {
+        "auroc": 0.999925,
+        "auroc_ci": [
+          0.9996989160979526,
+          1.0
+        ],
+        "n": 400
+      },
+      "delta_auroc": 7.499999999993623e-05,
+      "partition": "clean"
+    },
+    "pirate": {
+      "clean_probe": {
+        "auroc": 0.89465,
+        "auroc_ci": [
+          0.8628200584014027,
+          0.9237946072357541
+        ],
+        "n": 400
+      },
+      "style_augmented_probe": {
+        "auroc": 0.999925,
+        "auroc_ci": [
+          0.9996963255390222,
+          1.0
+        ],
+        "n": 400
+      },
+      "delta_auroc": 0.10527500000000001,
+      "partition": "train_style"
+    },
+    "formal_academic": {
+      "clean_probe": {
+        "auroc": 0.87605,
+        "auroc_ci": [
+          0.8418704444849703,
+          0.9075525984829308
+        ],
+        "n": 400
+      },
+      "style_augmented_probe": {
+        "auroc": 0.999675,
+        "auroc_ci": [
+          0.9989990910469769,
+          1.0
+        ],
+        "n": 400
+      },
+      "delta_auroc": 0.12362499999999998,
+      "partition": "train_style"
+    },
+    "robotic": {
+      "clean_probe": {
+        "auroc": 0.998,
+        "auroc_ci": [
+          0.9933732808888661,
+          1.0
+        ],
+        "n": 400
+      },
+      "style_augmented_probe": {
+        "auroc": 0.999975,
+        "auroc_ci": [
+          0.9998497596153846,
+          1.0
+        ],
+        "n": 400
+      },
+      "delta_auroc": 0.001974999999999949,
+      "partition": "train_style"
+    },
+    "poetic": {
+      "clean_probe": {
+        "auroc": 0.8892249999999999,
+        "auroc_ci": [
+          0.8557402577069625,
+          0.9207580234805843
+        ],
+        "n": 400
+      },
+      "style_augmented_probe": {
+        "auroc": 0.999675,
+        "auroc_ci": [
+          0.9990494058786742,
+          1.0
+        ],
+        "n": 400
+      },
+      "delta_auroc": 0.11045000000000005,
+      "partition": "train_style"
+    },
+    "shakespearean": {
+      "clean_probe": {
+        "auroc": 0.90205,
+        "auroc_ci": [
+          0.8721229335193423,
+          0.9295125390625
+        ],
+        "n": 400
+      },
+      "style_augmented_probe": {
+        "auroc": 0.998525,
+        "auroc_ci": [
+          0.9966882469427736,
+          0.9997227543099103
+        ],
+        "n": 400
+      },
+      "delta_auroc": 0.09647499999999998,
+      "partition": "test_style"
+    },
+    "childlike": {
+      "clean_probe": {
+        "auroc": 1.0,
+        "auroc_ci": [
+          0.9999999999999999,
+          1.0
+        ],
+        "n": 400
+      },
+      "style_augmented_probe": {
+        "auroc": 1.0,
+        "auroc_ci": [
+          0.9999999999999999,
+          1.0
+        ],
+        "n": 400
+      },
+      "delta_auroc": 0.0,
+      "partition": "test_style"
+    },
+    "slang_casual": {
+      "clean_probe": {
+        "auroc": 0.989175,
+        "auroc_ci": [
+          0.9744358625770713,
+          0.9994975543249034
+        ],
+        "n": 400
+      },
+      "style_augmented_probe": {
+        "auroc": 0.999825,
+        "auroc_ci": [
+          0.9993996247654784,
+          1.0
+        ],
+        "n": 400
+      },
+      "delta_auroc": 0.010649999999999937,
+      "partition": "test_style"
+    },
+    "sarcastic": {
+      "clean_probe": {
+        "auroc": 0.7928249999999999,
+        "auroc_ci": [
+          0.748892972462852,
+          0.8340488861421346
+        ],
+        "n": 400
+      },
+      "style_augmented_probe": {
+        "auroc": 0.9321750000000001,
+        "auroc_ci": [
+          0.9077443237383905,
+          0.95373517873651
+        ],
+        "n": 400
+      },
+      "delta_auroc": 0.1393500000000002,
+      "partition": "test_style"
+    }
+  },
+  "summary": {
+    "mean_delta_train_styles": 0.08533125,
+    "mean_delta_test_styles": 0.06161875000000003,
+    "mean_aug_auroc_train": 0.9998125,
+    "mean_aug_auroc_test": 0.98263125,
+    "interpretation": "OUTCOME_C: Style-augmented probes generalize to unseen styles. Fragility was a training artifact \u2014 valuable practical finding."
+  }
+}
