@@ -1,7 +1,8 @@
 # llm-deception-probe-stress-test
 
-Full implementation of the experimental pipeline for  paper submission titled "Pressure-Testing Deception Probes in LLMs: Scaling, Robustness, and the Geometry of Deceptive Representations" into Generation, Evaluation, and Metrics 
-(GEM) Workshop at ACL 2026.
+Full implementation of the experimental pipeline for the paper "Pressure-Testing Deception Probes in LLMs: Scaling, Robustness, and the Geometry of Deceptive Representations," published in the Proceedings of the Fifth Workshop on Generation, Evaluation and Metrics (GEM) at ACL 2026.
+
+📄 **Paper:** https://aclanthology.org/2026.gem-main.43/ · **DOI:** [10.18653/v1/2026.gem-main.43](https://doi.org/10.18653/v1/2026.gem-main.43)
 
 ## Overview
 
@@ -172,15 +173,27 @@ python additional_experiments/experiment_1c_target_layer_transfer.py \
 If you use this code, please cite:
 
 ```bibtex
-@misc{kumar2026pressuretestingdeceptionprobesllms,
-      title={Pressure-Testing Deception Probes in LLMs: Scaling, Robustness, and the Geometry of Deceptive Representations}, 
-      author={Sachin Kumar},
-      year={2026},
-      eprint={2605.27958},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2605.27958}, 
+@inproceedings{kumar-2026-pressure,
+    title = "Pressure-Testing Deception Probes in {LLM}s: Scaling, Robustness, and the Geometry of Deceptive Representations",
+    author = "Kumar, Sachin",
+    editor = "Mille, Simon  and
+      Gehrmann, Sebastian  and
+      Schmidtov{\'a}, Patr{\'i}cia  and
+      Du{\v{s}}ek, Ond{\v{r}}ej  and
+      Fadaee, Marzieh  and
+      Lo, Kyle  and
+      Santus, Enrico  and
+      Stanovsky, Gabriel",
+    booktitle = "Proceedings of the Fifth Workshop on Generation, Evaluation and Metrics ({GEM})",
+    month = jul,
+    year = "2026",
+    address = "San Diego, California, USA",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2026.gem-main.43/",
+    doi = "10.18653/v1/2026.gem-main.43",
+    pages = "472--489",
+    ISBN = "979-8-89176-423-1",
 }
 ```
 
-Preprint: https://arxiv.org/abs/2605.27958
+Published in the [ACL Anthology](https://aclanthology.org/2026.gem-main.43/) (GEM Workshop @ ACL 2026, pages 472–489).
